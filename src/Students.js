@@ -15,14 +15,19 @@ const GET_STUDENTS = gql`
 function Students() {
   const { loading, error, data } = useQuery(GET_STUDENTS);
 
-  if (loading) return <h1>Loading...</h1>;
+  if (loading) return <h1 style={{ textAlign: 'center' }}>Loading...</h1>;
 
-  if (error) return <h1>Error!!</h1>;
+  if (error) return <h1 style={{ textAlign: 'center' }}>Error!!</h1>;
 
   const { students } = data;
 
   return (
-    <div>
+    <div style={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+    }}>
       <h1>Students List</h1>
       <table border="3">
         <tr>
